@@ -22,5 +22,8 @@ Note:
 when Working with stack navigation rename App_stack.js name back to App.js
 and similarly for Drawer navigation and tab navigation
 
+->ScreenOptions are used to apply styling/customize all screens
+->Options are used to customize specific screen
+
 and inside package.json 
 -> Clear Metro bundler cache (recommended) : done here: "start": "expo start -c", 
