@@ -19,10 +19,19 @@ import Contact from "./Components/Screens/1_For Stack Navigation/Contact";
 //making  native stack navigator instance
 const Stack = createNativeStackNavigator();
 
+//used when we nest stack navigator inside tab navigator (lec-82 at 0:45)
+/*when you learn stack navigator from return cut <Stack.Navigator>....</Stack.Navigator> and paste it
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
+      <AboutStack />
+    </NavigationContainer>
+  );
+} in this in place of <AboutStack/>
+*/
+export const AboutStack=()=>{
+  return(
+    <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
           headerStyle: { backgroundColor: "teal" },
@@ -65,6 +74,13 @@ export default function App() {
           // })}
         />
       </Stack.Navigator>
+  )
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <AboutStack />
     </NavigationContainer>
   );
 }
