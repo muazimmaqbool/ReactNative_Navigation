@@ -1,86 +1,103 @@
+/*
+ To work with react navigation properly we need to a wrapping component for the whole app
+ i.e the navigation container component
+ go back to docs:https://reactnavigation.org/docs/getting-started/
+ and go to: Wrapping your app in NavigationContainer and copy the code below this heading and paste it here
+ in app.js
+ */
+
+//? if currently its name is App.js, then you are working with Stack navigation when you work with other makesure
+//?change its name to APP_StackNav.js
 //! Rename its name back to App.js to make it work
-//? if currently its name is App.js, then you are working with nested navigator when you work with other makesure
-//?change its name to APP_NestedNav.js
 
+import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Profile from "./Components/Screens/3_For Tab Nav/Profile";
-import Courses from "./Components/Screens/3_For Tab Nav/Courses";
-import Settings from "./Components/Screens/2_For Drawer Nav/SettingsScreen";
-import ChatScreen from "./Components/Screens/3_For Tab Nav/chatScreen";
-//using icons from expo icons
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { AboutStack } from "./App_Stack";
-const Tab = createBottomTabNavigator();
+//imported for using Navtive stack navigator
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeScreen from "./Components/Screens/1_For Stack Navigation/HomeScreen";
+import AboutScreen from "./Components/Screens/1_For Stack Navigation/AboutScreen";
+import { Pressable, Text } from "react-native";
+import Contact from "./Components/Screens/1_For Stack Navigation/Contact";
 
-//we will nest stack navigator within the tab navigator
+//making  native stack navigator instance
+const Stack = createNativeStackNavigator();
+
+//used when we nest stack navigator inside tab navigator (lec-82 at 0:45)
+/*when you learn stack navigator from return cut <Stack.Navigator>....</Stack.Navigator> and paste it
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator
+      <AboutStack />
+    </NavigationContainer>
+  );
+} in this in place of <AboutStack/>
+*/
+export const AboutStack=()=>{
+  return(
+    <Stack.Navigator
+        initialRouteName="Home"
         screenOptions={{
-          //tabBarLabelPosition:"beside-icon",// sets title on the right side of icon (used inside tablets)
-          tabBarLabelPosition: "below-icon", //used inside mobile devices
-          tabBarShowLabel: true, //true by default , its false then tab label is hidden only icons are shown
-          tabBarActiveTintColor: "purple", //color of active tab
-          tabBarInactiveTintColor: "blue", // color of inactive tabs by default its "gray"
+          headerStyle: { backgroundColor: "teal" },
+          headerTintColor: "white",
+          headerTitleStyle: { fontWeight: "bold" },
+          headerRight: () => (
+            <Pressable onPress={() => alert("Menu Button Pressed")}>
+              <Text style={{ color: "skyblue", fontSize: 16}}>Menu</Text>
+            </Pressable>
+          ),
+          contentStyle: {
+            backgroundColor: "skyblue",
+          },
         }}
       >
-        <Tab.Screen
-          name="Profile"
-          component={Profile}
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
           options={{
-            tabBarLabel: "My Profile", //changes tab label (otherwise its use value of name prop here)
-            tabBarIcon: (
-              { color } //now icon color purple or gray i,e matchs the tab color
-            ) => <Ionicons name="person" size={30} color={color} />,
-            //tabBarBadge:4, //used to text on top of tab icon, particularly useful for notifications or inbox tab that requires users attention
+            title: "Welcome Home",
           }}
         />
-        <Tab.Screen
-          name="Chat"
-          component={ChatScreen}
+        <Stack.Screen
+          name="About"
+          component={AboutScreen}
+          initialParams={{ name: "Guest" }}
           options={{
-            tabBarBadge: 3,
-            tabBarIcon: ({ color }) => (
-              <Ionicons color={color} size={30} name="chatbubbles-outline" />
-            ),
+            headerTitleAlign: "center",
           }}
         />
-        <Tab.Screen
-          name="Courses"
-          component={Courses}
-          options={{
-            tabBarLabel: "Course Cart",
-            tabBarIcon: ({ color }) => (
-              <Ionicons color={color} name="cart" size={30} />
-            ),
-          }}
+        {/*used to explain dynamic stack nav options */}
+        <Stack.Screen
+          name="Contact"
+          component={Contact}
+          initialParams={{ name: "Guest" }}
+          //dynamic change of title uusing options 
+          // options={({ route }) => ({
+             //passed from HomeScreen
+          //   title: route.params.titleText,
+          // })}
         />
-        <Tab.Screen
-          name="Settings"
-          component={Settings}
-          options={{
-            tabBarIcon: ({ color }) => (
-              <Ionicons color={color} name="settings-outline" size={30} />
-            ),
-          }}
-        />
-        {/* we will nest stack navigator within the tab navigator */}
-        <Tab.Screen
-          name="About Stack"
-          component={AboutStack}
-          options={{
-            tabBarIcon: ({ color }) => (
-              <Ionicons color={color} name="cloudy" size={30} />
-            ),
-            headerShown:false, //now we will one header instead of two
-          }}
-        />
-      </Tab.Navigator>
+      </Stack.Navigator>
+  )
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <AboutStack />
     </NavigationContainer>
   );
 }
+
 /*
-settings is of Drawer Navigation 
-*/
+?without using 'initiaRouteName'
+ <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomeScreen}/> //! this will be the initial screen as its on top
+      <Stack.Screen name="About" component={AboutScreen}/>
+  </Stack.Navigator>
+
+?Using 'initialRouteName'
+<Stack.Navigator initialRouteName="About">
+      <Stack.Screen name="Home" component={HomeScreen}/>
+      <Stack.Screen name="About" component={AboutScreen}/> //? now this will be the initial screen as its mentioned in initialRouteName
+  </Stack.Navigator>
+ */

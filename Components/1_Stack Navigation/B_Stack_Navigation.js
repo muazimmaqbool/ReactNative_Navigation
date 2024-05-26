@@ -9,7 +9,7 @@ Stack Navigation: Here each new screen is stacked on top of the previous one lik
      example: List view to details view to more details view
     
   Note: In Stack Navigation, React Native offers two navigators: Stack Navigator and Native Stack Navigator
-    1)Stack Navigator: js based navigator, offers a high degree of customization,making it great choice for apps that reuire
+    1)Stack Navigator: js based navigator, offers a high degree of customization,making it great choice for apps that require
                       a unique navigation experience
               ->But it was bit less performance compared to Native Stack Navigator
     2) Native Stack Navigator: used in both ios and android and provides better performance and more native feel to

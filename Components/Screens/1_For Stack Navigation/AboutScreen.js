@@ -20,7 +20,7 @@ const AboutScreen = ({ route, navigation }) => {
         }
       />
       <Button
-        title="Go Back With Data"
+        title="Go Back With Message"
         onPress={() =>
           navigation.navigate("Home", { result: "Hi! From About" })
         }

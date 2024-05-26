@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 /*
-Navigation: The mechanism that allows users to move across different screens, access features, and generallu use your app effectively.
+Navigation: The mechanism that allows users to move across different screens, access features, and generally use your app effectively.
+
 
 ->A go-to solution for handling navigation is the React Navigation Library
 ->Expo had its own built-in routing features exlusive for Expo Projects
@@ -19,7 +20,7 @@ Navigation: The mechanism that allows users to move across different screens, ac
  and then also install two more dependencies: npx expo install react-native-screens react-native-safe-area-context
 -> visit: https://reactnavigation.org/docs/getting-started/ for more info
 
-->Wrapping your app in NavigationContainer see in App.js
+->Wrapping your app in NavigationContainer see in App.js/APP_STACKNAV.js
 */
 
 const A_Navigation = () => {
