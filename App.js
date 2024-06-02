@@ -22,23 +22,14 @@ import Contact from "./Components/Screens/1_For Stack Navigation/Contact";
 //making  native stack navigator instance
 const Stack = createNativeStackNavigator();
 
-//used when we nest stack navigator inside tab navigator (lec-82 at 0:45)
-/*when you learn stack navigator from return cut <Stack.Navigator>....</Stack.Navigator> and paste it
-export default function App() {
-  return (
-    <NavigationContainer>
-      <AboutStack />
-    </NavigationContainer>
-  );
-} in this in place of <AboutStack/>
-*/
+
 export const AboutStack=()=>{
   return(
     <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
           headerStyle: { backgroundColor: "teal" },
-          headerTintColor: "white",
+          headerTintColor: "white", //back icon
           headerTitleStyle: { fontWeight: "bold" },
           headerRight: () => (
             <Pressable onPress={() => alert("Menu Button Pressed")}>
@@ -62,6 +53,7 @@ export const AboutStack=()=>{
           component={AboutScreen}
           initialParams={{ name: "Guest" }}
           options={{
+            //here title is not mentioned it will take title as name value
             headerTitleAlign: "center",
           }}
         />
@@ -72,7 +64,7 @@ export const AboutStack=()=>{
           initialParams={{ name: "Guest" }}
           //dynamic change of title uusing options 
           // options={({ route }) => ({
-             //passed from HomeScreen
+          //   // passed from HomeScreen
           //   title: route.params.titleText,
           // })}
         />

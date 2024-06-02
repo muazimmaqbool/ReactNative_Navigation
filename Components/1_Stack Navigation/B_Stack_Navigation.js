@@ -5,7 +5,7 @@ import React from 'react'
 Stack Navigation: Here each new screen is stacked on top of the previous one like a deck of cards.
   ->When you navigate to a new screen, a new screen is placed on top of the stack, and when you navigate back, 
     the top screen is removed, revealing the previous screen.
-  ->Its particularly useful in scenarios wheret a linear flow of screens is required
+  ->Its particularly useful in scenarios where a linear flow of screens is required
      example: List view to details view to more details view
     
   Note: In Stack Navigation, React Native offers two navigators: Stack Navigator and Native Stack Navigator

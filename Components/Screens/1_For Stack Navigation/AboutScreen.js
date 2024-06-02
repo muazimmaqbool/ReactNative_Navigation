@@ -2,15 +2,16 @@ import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 //here i will be using 'useNavigation hook' to go back to home screen
-const AboutScreen = ({ route, navigation }) => {
-  // const navigation =useNavigation();
-  //if useNavigation hook is not used and we want to update props data, then you must use navigation via props
+const AboutScreen = ({ route,  }) => {
+  const navigation =useNavigation();
   const { name } = route.params;
   return (
     <View style={styles.container}>
       <Text style={styles.text}>About Screen</Text>
-      {/* <Button title='Go To Home' onPress={()=>navigation.navigate("Home")}/> */}
       <Text style={styles.data}>Data Received: {name}</Text>
+      {/*
+      navigation.setParams is used to update the value of passed prop
+      */}
       <Button
         title="change name"
         onPress={() =>

@@ -1,4 +1,4 @@
-Navigation: The mechanism that allows users to move across different screens, access features, and generallu use your app effectively.
+Navigation: The mechanism that allows users to move across different screens, access features, and generally use your app effectively.
 
 ->A go-to solution for handling navigation is the React Navigation Library
 ->Expo had its own built-in routing features exlusive for Expo Projects

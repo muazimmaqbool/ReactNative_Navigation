@@ -18,9 +18,7 @@ const HomeScreen = ({navigation,route}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Home Screen</Text>
-      <Button title='Go To About' onPress={()=>navigation.navigate("About",{
-        name:"Muazim"
-      })}/>
+      <Button title='Go To About' onPress={()=>navigation.navigate("About",{name:"Muazim"})}/>
       <Text style={styles.text}>{route.params?.result}</Text>
       {/*used to explain dynamic stack nav options */}
       <Button title='Go To Contact' onPress={()=>navigation.navigate("Contact",{

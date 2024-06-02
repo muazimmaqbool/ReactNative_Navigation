@@ -20,7 +20,7 @@ Note: by default header title position is ios is middle and in android is in lef
           options={{
             title: "Welcome Home",
             headerStyle: { backgroundColor: "teal", },
-            headerTintColor:"white",
+            headerTintColor:"white",//back icon
             headerTitleStyle:{fontWeight:"bold"},
           }}
         />
@@ -97,6 +97,7 @@ example: <Stack.Screen
           component={AboutScreen}
           initialParams={{ name: "Guest" }}
           options={{
+            ?here title is not mentioned it will take title as name value
             headerTitleAlign: "center",
           }}
         />
