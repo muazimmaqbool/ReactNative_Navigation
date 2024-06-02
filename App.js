@@ -7,8 +7,8 @@
  */
 
 //? if currently its name is App.js, then you are working with Stack navigation when you work with other makesure
-//?change its name to APP_StackNav.js
-//! Rename its name back to App.js to make it work
+//?change its name to APP_Stack.js
+//! Rename its name back to App.js to make it work, when not working with it sets its name to: APP_Stack.js
 
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";

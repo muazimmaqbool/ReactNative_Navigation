@@ -1,4 +1,4 @@
-//! Rename its name back to App.js to make it work
+//! Rename its name back to App.js to make it work, when not working with it set its name to: App_Tab.js
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Profile from "./Components/Screens/3_For Tab Nav/Profile";
@@ -14,7 +14,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={{
-          //tabBarLabelPosition:"beside-icon",// sets title on the right side of icon (used inside tablets)
+         // tabBarLabelPosition:"beside-icon",// sets title on the right side of icon (used inside tablets)
           tabBarLabelPosition: "below-icon", //used inside mobile devices
           tabBarShowLabel: true, //true by default , its false then tab label is hidden only icons are shown
           tabBarActiveTintColor: "purple", //color of active tab
@@ -25,11 +25,11 @@ export default function App() {
           name="Profile"
           component={Profile}
           options={{
-            tabBarLabel: "My Profile", //changes tab label (otherwise its use value of name prop here)
-            tabBarIcon: ({ color }) => ( //now icon color purple or gray i,e matchs the tab color
+            tabBarLabel: "My Profile", //changes tab label (otherwise it uses value of name prop here)
+            tabBarIcon: ({ color }) => ( //now icon color purple or gray i,e matches the tab color
               <Ionicons name="person" size={30} color={color} />
             ),
-            //tabBarBadge:4, //used to text on top of tab icon, particularly useful for notifications or inbox tab that requires users attention
+            //tabBarBadge:4, //used to show text on top of tab icon, particularly useful for notifications or inbox tab that requires users attention
           }}
         />
         <Tab.Screen name="Chat" component={ChatScreen} options={{

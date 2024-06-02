@@ -28,7 +28,9 @@ const Contact = ({ route,navigation }) => {
 };
 /*
 Note:
-  The useLayoutEffect hook is similar to the useEffect theme in that it fires synchronously once all 
+  The useLayoutEffect hook is similar to the useEffect theme
+  
+  in that it fires synchronously once all 
   DOM loading is completed, rather than asynchronous like the useEffect hook.
   This can be used to re-render the DOM and read its layout concurrently
 */

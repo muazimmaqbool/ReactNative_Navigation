@@ -4,7 +4,7 @@ import React from 'react'
 const ChatScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Profile Screen</Text>
+      <Text style={styles.text}>Chat Screen</Text>
     </View>
   )
 }
