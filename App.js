@@ -1,5 +1,5 @@
 /*
- To work with react navigation properly we need to a wrapping component for the whole app
+ To work with react navigation properly we need a wrapping component for the whole app
  i.e the navigation container component
  go back to docs:https://reactnavigation.org/docs/getting-started/
  and go to: Wrapping your app in NavigationContainer and copy the code below this heading and paste it here

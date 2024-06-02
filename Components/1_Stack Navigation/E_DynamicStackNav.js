@@ -24,10 +24,10 @@ Dynamic Stack Navigator Options:
           })}
         />
     ? the title of Contact Screen is changed from Home screen while calling it
- 2) We alsi use react hook to set dynamic title of the contact screen
+ 2) We also use react hook to set dynamic title of the contact screen
  Example:
  const Contact = ({ route,navigation }) => {
-//   const navigation =useNavigation();
+ const navigation =useNavigation();
   const { titleText } = route.params;
 
   useLayoutEffect(()=>{
@@ -35,7 +35,7 @@ Dynamic Stack Navigator Options:
         title:titleText
     })
   },[navigation,titleText])
-  // we can also use: "useEffect" in place of "useLayoutEffect" but it might show title bit late so
+  we can also use: "useEffect" in place of "useLayoutEffect" but it might show title bit late so
   better to use "useLayoutEffect"
   return (
     <View style={styles.container}>

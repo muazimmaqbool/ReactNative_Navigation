@@ -43,7 +43,7 @@ Note: by default header title position is ios is middle and in android is in lef
         headerLeft works in same way
 
 -> Styling Content of the screens: using contentStyle Option
-exmaple: <Stack.Screen
+example: <Stack.Screen
           name="Home"
           component={HomeScreen}
           options={{
@@ -62,7 +62,7 @@ exmaple: <Stack.Screen
           }}
         /> 
         
-->Note to add styling for all the screen just App screenOptions in <Stack.Navigator> and past all styling their
+->Note to add styling for all the screen just Add screenOptions in <Stack.Navigator> and past all styling their
           but title remains screen level prop
           example:
           export default function App() {
