@@ -19,7 +19,7 @@ import AboutScreen from "./Components/Screens/1_For Stack Navigation/AboutScreen
 import { Pressable, Text } from "react-native";
 import Contact from "./Components/Screens/1_For Stack Navigation/Contact";
 
-//making  native stack navigator instance
+//making native stack navigator instance
 const Stack = createNativeStackNavigator();
 
 
