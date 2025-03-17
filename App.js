@@ -6,9 +6,9 @@
  in app.js
  */
 
-//? if currently its name is App.js, then you are working with Stack navigation when you work with other makesure
-//?change its name to APP_Stack.js
-//! Rename its name back to App.js to make it work, when not working with it sets its name to: APP_Stack.js
+//? if currently this files name is App.js, then you are working with Stack navigation when you work with others make sure
+//? change its name to App_Stack.js
+//! Rename its name back to App.js to make it work, when not working with it set its name to: App_Stack.js
 
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";

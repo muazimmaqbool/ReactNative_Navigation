@@ -3,7 +3,7 @@ Navigation: The mechanism that allows users to move across different screens, ac
 ->A go-to solution for handling navigation is the React Navigation Library
 ->Expo had its own built-in routing features exlusive for Expo Projects
 ->Note: React Navigation works both with and without Expo in React Native apps
-->So, we will be focus more on React Navigation
+->So, we will focus more on React Navigation
 
 ->React Navigation: 
     It provides a variety of navigations like Stack, Drawer and Tab navigators.
