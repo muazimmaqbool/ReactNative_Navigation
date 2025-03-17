@@ -6,7 +6,7 @@ Navigation: The mechanism that allows users to move across different screens, ac
 ->So, we will be focus more on React Navigation
 
 ->React Navigation: 
-    It provides a variety of navigatiosn like Stack, Drawer and Tab navigators.
+    It provides a variety of navigations like Stack, Drawer and Tab navigators.
 
     1) Stack navigation: provides a way for your app to transition between different screens where each new screen is placed on top of a stack.
     2) Drawer navigation: renders a navigation drawer on the side of the screen which can be opened and closed via gestures.
@@ -19,10 +19,10 @@ Navigation: The mechanism that allows users to move across different screens, ac
 ->Wrapping your app in NavigationContainer see in App.js
 
 Note:
-when Working with stack navigation rename App_stack.js name back to App.js
-and similarly for Drawer navigation and tab navigation
+    when Working with stack navigation rename App_stack.js back to App.js
+    and similarly for Drawer navigation and tab navigation
 
-->ScreenOptions are used to apply styling/customize all screens
+->ScreenOptions are used to apply styling/customize to all screens
 ->Options are used to customize specific screen
 
 and inside package.json 
