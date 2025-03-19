@@ -3,8 +3,8 @@ import { Button, StyleSheet, Text, View } from "react-native";
 import React,{useLayoutEffect} from "react";
 import { useNavigation } from "@react-navigation/native";
 //here i will be using 'useNavigation hook' to go back to home screen
-const Contact = ({ route,navigation }) => {
-  //const navigation =useNavigation();
+const Contact = ({ route }) => {
+  const navigation =useNavigation();
   const { titleText } = route.params;
 
   useLayoutEffect(()=>{
