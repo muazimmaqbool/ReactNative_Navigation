@@ -57,7 +57,7 @@ export const AboutStack=()=>{
             headerTitleAlign: "center",
           }}
         />
-        {/*used to explain dynamic stack nav options */}
+        {/*used to explain dynamic stack navigation options */}
         <Stack.Screen
           name="Contact"
           component={Contact}

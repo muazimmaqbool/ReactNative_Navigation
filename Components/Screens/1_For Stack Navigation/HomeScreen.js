@@ -3,7 +3,7 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 
 /*
-here we will first use navigation prop and its method navigate to navigate from home to about screen
+here we will first use navigation prop and use its method navigate to navigate from home to about screen
 navigation prop is provided automatically from react navigation
 */
 /*
