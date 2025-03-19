@@ -24,7 +24,7 @@ Stack Navigation: Here each new screen is stacked on top of the previous one lik
 
 
     watch lec-74:
-    Lets navigate between two screen i.e HomeScreen and AboutScreen
+    Lets users navigate between two screen i.e HomeScreen and AboutScreen
     their are two ways: 1)Navigation prop and 2)useNavigation hook
 
     1)Navigation prop: every component in your app is provided with Navigation prop automatically by react navigation
@@ -38,7 +38,8 @@ Stack Navigation: Here each new screen is stacked on top of the previous one lik
     ?When to use 'navigation prop' and 'useNavigation hook'
     ->navigation prop: its easy to use and doesn't require extra imports if your within the screen components
     ->useNavigation hook: it can be used in any component not just screen components making it more
-                flexible option when you use nested components or working with utility components(used to perform specific tasks in a software application)
+                flexible option when you use nested components or working with utility components
+                (utility components: used to perform specific tasks in a software application)
 
     !so use 'navigation prop' for all screen components and use 'useNavigation hook' only when its necessary
 */
