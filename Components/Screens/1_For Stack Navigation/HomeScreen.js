@@ -13,13 +13,13 @@ import { useNavigation } from '@react-navigation/native'
 /* see how to pass data while navigating in code : C_passingData.js */
 
 const HomeScreen = ({navigation,route}) => {
-    //const navigation =useNavigation(); //use use this first remove navigation prop : const HomeScreen = () => {...}
+    //const navigation =useNavigation(); //to use this first remove navigation prop : const HomeScreen = () => {...}
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Home Screen</Text>
       <Button title='Go To About' onPress={()=>navigation.navigate("About",{name:"Muazim"})}/>
       <Text style={styles.text}>{route.params?.result}</Text>
-      {/*used to explain dynamic stack nav options */}
+      {/*used to explain dynamic stack navigation options */}
       <Button title='Go To Contact' onPress={()=>navigation.navigate("Contact",{
        titleText:"Hp OMEN",
       })}/> 
