@@ -6,15 +6,15 @@ Stack Navigation: Here each new screen is stacked on top of the previous one lik
   ->When you navigate to a new screen, a new screen is placed on top of the stack, and when you navigate back, 
     the top screen is removed, revealing the previous screen.
   ->Its particularly useful in scenarios where a linear flow of screens is required
-     example: List view to details view to more details view
+    for example: List view to details view to more details view
     
   Note: In Stack Navigation, React Native offers two navigators: Stack Navigator and Native Stack Navigator
     1)Stack Navigator: js based navigator, offers a high degree of customization,making it great choice for apps that require
-                      a unique navigation experience
-              ->But it was bit less performance compared to Native Stack Navigator
-    2) Native Stack Navigator: used in both ios and android and provides better performance and more native feel to
-                                the transitions and gestures
-                      ->It might not offer the same level of customization as the Stack Navigator but its fast
+                       a unique navigation experience
+                       ->But it has bit less performance compared to Native Stack Navigator
+    2)Native Stack Navigator: used in both ios and android and provides better performance and more native feel to
+                              the transitions and gestures
+                              ->It might not offer the same level of customization as the Stack Navigator but its fast
     ->Note: We will keep the things simple and focus on "Native Stack Navigator"
 
     first intall "Native Stack Navigator" library: npm install @react-navigation/native-stack
