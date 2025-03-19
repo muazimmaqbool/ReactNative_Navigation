@@ -3,12 +3,11 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 
 /*
-here we will first use navigation prop and use its method navigate to navigate from home to about screen
-navigation prop is provided automatically from react navigation
-*/
-/*
-when using useNavigation Hook import useNavigation and then do this const navigation=useNavigation()
-delete navigation prop and rest remains the same
+-> Here we will first use navigation prop and use its method navigate to navigate from home to about screen
+   navigation prop is provided automatically from react navigation
+
+-> when using useNavigation Hook import useNavigation and then do this: const navigation=useNavigation()
+   delete navigation prop and rest remains the same
 */
 
 /* see how to pass data while navigating in code : C_passingData.js */
