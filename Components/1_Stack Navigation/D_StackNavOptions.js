@@ -62,7 +62,7 @@ example: <Stack.Screen
           }}
         /> 
         
-->Note to add styling for all the screen just Add screenOptions in <Stack.Navigator> and past all styling their
+->Note to add styling for all the screen just Add screenOptions in <Stack.Navigator> and put all styling their
           but title remains screen level prop
           example:
           export default function App() {
