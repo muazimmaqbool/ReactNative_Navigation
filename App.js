@@ -1,95 +1,52 @@
-/*
- To work with react navigation properly we need a wrapping component for the whole app
- i.e the navigation container component
- go back to docs:https://reactnavigation.org/docs/getting-started/
- and go to: Wrapping your app in NavigationContainer and copy the code below this heading and paste it here
- in app.js
- */
-
-//? if currently this files name is App.js, then you are working with Stack navigation when you work with others make sure
-//? change its name to App_Stack.js
-//! Rename its name back to App.js to make it work, when not working with it set its name to: App_Stack.js
-
-import * as React from "react";
+//! Rename its name back to App.js to make it work, when not working with it set its name to: App_Tab.js
 import { NavigationContainer } from "@react-navigation/native";
-//imported for using Navtive stack navigator
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./Components/Screens/1_For Stack Navigation/HomeScreen";
-import AboutScreen from "./Components/Screens/1_For Stack Navigation/AboutScreen";
-import { Pressable, Text } from "react-native";
-import Contact from "./Components/Screens/1_For Stack Navigation/Contact";
-
-//making native stack navigator instance
-const Stack = createNativeStackNavigator();
-
-
-export const AboutStack=()=>{
-  return(
-    <Stack.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-          headerStyle: { backgroundColor: "teal" },
-          headerTintColor: "white", //back icon
-          headerTitleStyle: { fontWeight: "bold" },
-          headerRight: () => (
-            <Pressable onPress={() => alert("Menu Button Pressed")}>
-              <Text style={{ color: "skyblue", fontSize: 16}}>Menu</Text>
-            </Pressable>
-          ),
-          contentStyle: {
-            backgroundColor: "skyblue",
-          },
-        }}
-      >
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            title: "Welcome Home",
-          }}
-        />
-        <Stack.Screen
-          name="About"
-          component={AboutScreen}
-          initialParams={{ name: "Guest" }}
-          options={{
-            //here title is not mentioned it will take title as name value
-            headerTitleAlign: "center",
-          }}
-        />
-        {/*used to explain dynamic stack navigation options */}
-        <Stack.Screen
-          name="Contact"
-          component={Contact}
-          initialParams={{ name: "Guest" }}
-          //dynamic change of title uusing options 
-          // options={({ route }) => ({
-          //   // passed from HomeScreen
-          //   title: route.params.titleText,
-          // })}
-        />
-      </Stack.Navigator>
-  )
-}
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Profile from "./Components/Screens/3_For Tab Nav/Profile";
+import Courses from "./Components/Screens/3_For Tab Nav/Courses";
+import Settings from "./Components/Screens/2_For Drawer Nav/SettingsScreen";
+import ChatScreen from "./Components/Screens/3_For Tab Nav/chatScreen"
+//using icons from expo icons
+import Ionicons from "@expo/vector-icons/Ionicons";
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <AboutStack />
+      <Tab.Navigator
+        screenOptions={{
+         // tabBarLabelPosition:"beside-icon",// sets title on the right side of icon (used inside tablets)
+          tabBarLabelPosition: "below-icon", //used inside mobile devices
+          tabBarShowLabel: true, //true by default , its false then tab label is hidden only icons are shown
+          tabBarActiveTintColor: "purple", //color of active tab
+          tabBarInactiveTintColor: "blue", // color of inactive tabs by default its "gray"
+        }}
+      >
+        <Tab.Screen
+          name="Profile"
+          component={Profile}
+          options={{
+            tabBarLabel: "My Profile", //changes tab label (otherwise it uses value of name prop here)
+            tabBarIcon: ({ color }) => ( //now icon color purple or gray i,e matches the tab color
+              <Ionicons name="person" size={30} color={color} />
+            ),
+            //tabBarBadge:4, //used to show text on top of tab icon, particularly useful for notifications or inbox tab that requires users attention
+          }}
+        />
+        <Tab.Screen name="Chat" component={ChatScreen} options={{
+            tabBarBadge:3,
+            tabBarIcon:({color})=>(<Ionicons color={color} size={30} name="chatbubbles-outline"/>)
+        }}/>
+        <Tab.Screen name="Courses" component={Courses} options={{
+            tabBarLabel:"Course Cart",
+            tabBarIcon:({color})=>(<Ionicons color={color} name="cart" size={30}/>)
+        }} />
+        <Tab.Screen name="Settings" component={Settings} options={{
+            tabBarIcon:({color})=>(<Ionicons color={color} name="settings-outline" size={30}/>)
+        }}/>
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
-
 /*
-?without using 'initiaRouteName'
- <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen}/> //! this will be the initial screen as its on top
-      <Stack.Screen name="About" component={AboutScreen}/>
-  </Stack.Navigator>
-
-?Using 'initialRouteName'
-<Stack.Navigator initialRouteName="About">
-      <Stack.Screen name="Home" component={HomeScreen}/>
-      <Stack.Screen name="About" component={AboutScreen}/> //? now this will be the initial screen as its mentioned in initialRouteName
-  </Stack.Navigator>
- */
+settings is of Drawer Navigation 
+*/

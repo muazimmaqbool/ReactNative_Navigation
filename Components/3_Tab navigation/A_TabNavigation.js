@@ -2,10 +2,9 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 /*
-lec-80
-Tab Navigation: tab navigation offers a way to switch between different screens by tapping on a tab which is usually 
-                displayed at the bottom of the screen
-    ->Its common in many apps and it provides a seamless user friendly experience
+  ->Tab Navigation: tab navigation offers a way to switch between different screens by tapping on a tab which is usually 
+                  displayed at the bottom of the screen
+  ->It's common in many apps and it provides a seamless user friendly experience
     
     docs: https://reactnavigation.org/docs/bottom-tab-navigator
     install: npm install @react-navigation/bottom-tabs
