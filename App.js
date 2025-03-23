@@ -1,5 +1,5 @@
 //! Rename its name back to App.js to make it work and when not working with this set its name to : App_Drawer.js
-import "react-native-gesture-handler"; //make sure its at the top
+import "react-native-gesture-handler"; //make sure it's at the top
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import DashBoardScreen from "./Components/Screens/2_For Drawer Nav/DashBoardScreen";
