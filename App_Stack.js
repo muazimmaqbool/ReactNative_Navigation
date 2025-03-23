@@ -26,7 +26,7 @@ const Stack = createNativeStackNavigator();
 export const AboutStack=()=>{
   return(
     <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="Home" //try "Contact" as initial route
         screenOptions={{
           headerStyle: { backgroundColor: "teal" },
           headerTintColor: "white", //back icon
