@@ -2,10 +2,10 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 /*
 Drawer Navigation:
-    unlike stack navigator which stacks screens one over the other
-    The Drawer Navigator: introduces a hidden menu sliding from either side of the screen
-    It is particularly beneficial in apps with multiple main sections that require a neat and organized
-    navigation structure.
+    -Unlike stack navigator which stacks screens one over the other
+    -The Drawer Navigator: introduces a hidden menu sliding from either side of the screen
+    -It is particularly beneficial in apps with multiple main sections that require a neat and organized
+     navigation structure.
 
     Drawer navigation docs: https://reactnavigation.org/docs/drawer-navigator
     install drawer package: npm install @react-navigation/drawer
@@ -18,9 +18,9 @@ Drawer Navigation:
 
 
     Important: 
-    -> we can open the drawer programatically using a button (see inside DashBoardScree.js) using toggleDrawer() on navigation
+    ->we can open the drawer programatically using a button (see inside DashBoardScreen.js) using toggleDrawer() on navigation
       example: "navigation" as prop then - <Button title='Toggle drawer' onPress={()=>navigation.toggleDrawer()}/>
-    -> We can also use jumpTo method on navigation prop to navigate programatically without using drawer UI
+    ->We can also use jumpTo method on navigation prop to navigate programatically without using drawer UI
         example: 
 */
 const A_DrawerNav = () => {
