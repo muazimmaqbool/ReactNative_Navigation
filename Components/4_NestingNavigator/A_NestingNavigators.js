@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 /*
-Nesting navigators allows us to combine the powers of different types of navigators, creating a seamless
+  ->Nesting navigators allows us to combine the powers of different types of navigators, creating a seamless
     and organized user experience.
     Its like having a main road with smaller branching lanes, each having its own set of rules yet interconnected
 
