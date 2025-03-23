@@ -55,6 +55,11 @@ export const AboutStack=()=>{
           options={{
             //here title is not mentioned it will take title as name value
             headerTitleAlign: "center",
+            headerRight: () => (
+              <Pressable onPress={() => alert("Menu Button Pressed")}>
+                <Text style={{ color: "white", fontSize: 16}}>More Info</Text>
+              </Pressable>
+            ),
           }}
         />
         {/*used to explain dynamic stack navigation options */}
@@ -62,11 +67,12 @@ export const AboutStack=()=>{
           name="Contact"
           component={Contact}
           initialParams={{ name: "Guest" }}
-          //dynamic change of title uusing options 
+          //dynamic change of title using options 
           // options={({ route }) => ({
           //   // passed from HomeScreen
           //   title: route.params.titleText,
           // })}
+          
         />
       </Stack.Navigator>
   )
