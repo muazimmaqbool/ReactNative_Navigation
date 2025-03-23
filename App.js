@@ -1,56 +1,86 @@
-//! Rename its name back to App.js to make it work and when not working with this set its name to : App_Drawer.js
-import "react-native-gesture-handler"; //make sure it's at the top
+//! Rename its name back to App.js to make it work, when not working with it sets its name to: APP_NestedNav.js
+//? if currently its name is App.js, then you are working with nested navigator when you work with other makesure
+//?change its name to APP_NestedNav.js
+
 import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import DashBoardScreen from "./Components/Screens/2_For Drawer Nav/DashBoardScreen";
-import SettingsScreen from "./Components/Screens/2_For Drawer Nav/SettingsScreen";
-import Contact from "./Components/Screens/2_For Drawer Nav/Contact"
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Profile from "./Components/Screens/3_For Tab Nav/Profile";
+import Courses from "./Components/Screens/3_For Tab Nav/Courses";
+import Settings from "./Components/Screens/2_For Drawer Nav/SettingsScreen";
+import ChatScreen from "./Components/Screens/3_For Tab Nav/chatScreen";
+//using icons from expo icons
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { AboutStack } from "./App_Stack";
+const Tab = createBottomTabNavigator();
 
-const Drawer = createDrawerNavigator();
-
+//we will nest stack navigator within the tab navigator
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator
+      <Tab.Navigator
         screenOptions={{
-          drawerActiveTintColor: "white", //color of text which is active
-          drawerActiveBackgroundColor: "teal", //background color of text which is active
-          drawerContentStyle: {
-            backgroundColor: "skyblue",
-          },
+          //tabBarLabelPosition:"beside-icon",// sets title on the right side of icon (used inside tablets)
+          tabBarLabelPosition: "below-icon", //used inside mobile devices
+          tabBarShowLabel: true, //true by default , its false then tab label is hidden only icons are shown
+          tabBarActiveTintColor: "purple", //color of active tab
+          tabBarInactiveTintColor: "blue", // color of inactive tabs by default its "gray"
         }}
       >
-        <Drawer.Screen
-          name="Dashboard"
-          component={DashBoardScreen}
+        <Tab.Screen
+          name="Profile"
+          component={Profile}
           options={{
-            title: "My Dashboard",
-            drawerLabel: "Dashboard Label", //displayed on the drawer which comes from the side of the screen
-            //using below options here they will be applied only for Dashboard Screen
-            //     drawerActiveTintColor: "white",
-            //   drawerActiveBackgroundColor: "teal",
-            //   drawerContentStyle: {
-            //     backgroundColor: "skyblue",
-            //   },
+            tabBarLabel: "My Profile", //changes tab label (otherwise its use value of name prop here)
+            tabBarIcon: (
+              { color } //now icon color purple or gray i,e matchs the tab color
+            ) => <Ionicons name="person" size={30} color={color} />,
+            //tabBarBadge:4, //used to text on top of tab icon, particularly useful for notifications or inbox tab that requires users attention
           }}
         />
-        <Drawer.Screen
+        <Tab.Screen
+          name="Chat"
+          component={ChatScreen}
+          options={{
+            tabBarBadge: 3,
+            tabBarIcon: ({ color }) => (
+              <Ionicons color={color} size={30} name="chatbubbles-outline" />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Courses"
+          component={Courses}
+          options={{
+            tabBarLabel: "Course Cart",
+            tabBarIcon: ({ color }) => (
+              <Ionicons color={color} name="cart" size={30} />
+            ),
+          }}
+        />
+        <Tab.Screen
           name="Settings"
-          component={SettingsScreen}
+          component={Settings}
           options={{
-            title:"My Settings", //here drawerLabel text is not mentioned so it will take the value title for drawerLabel as well
+            tabBarIcon: ({ color }) => (
+              <Ionicons color={color} name="settings-outline" size={30} />
+            ),
           }}
         />
-        <Drawer.Screen
-        name="Contact"
-        component={Contact}
-        //here i have not mentioned title and drawerLabel so it will take the value of name  for both
+        {/* we will nest stack navigator within the tab navigator */}
+        <Tab.Screen
+          name="About Stack"
+          component={AboutStack}
+          options={{
+            tabBarIcon: ({ color }) => (
+              <Ionicons color={color} name="cloudy" size={30} />
+            ),
+           headerShown:false, //now we will show one header instead of two
+          }}
         />
-      </Drawer.Navigator>
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
 /*
-Now Drawer Menu Icon appears on the left side of the app to navigate to different components
- Also its possible to toggle/open the drawer programatically see inside DashboardScreen component
+settings is of Drawer Navigation 
 */
