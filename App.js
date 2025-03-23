@@ -1,6 +1,6 @@
-//! Rename its name back to App.js to make it work, when not working with it sets its name to: APP_NestedNav.js
-//? if currently its name is App.js, then you are working with nested navigator when you work with other makesure
-//?change its name to APP_NestedNav.js
+//! Rename its name back to App.js to make it work, when not working with it change it's name to: APP_NestedNav.js
+//? if currently its name is App.js, then you are working with nested navigator when you work with others makesure
+//? to change it's name to APP_NestedNav.js
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -74,7 +74,7 @@ export default function App() {
             tabBarIcon: ({ color }) => (
               <Ionicons color={color} name="cloudy" size={30} />
             ),
-           headerShown:false, //now we will show one header instead of two
+           headerShown:false, //now we will show one header instead of two, here tab navigators header will not be shown
           }}
         />
       </Tab.Navigator>
