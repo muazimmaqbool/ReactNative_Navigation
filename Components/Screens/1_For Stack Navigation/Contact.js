@@ -12,8 +12,10 @@ const Contact = ({ route }) => {
         title:titleText
     })
   },[navigation,titleText])
-  /* we can also use: "useEffect" in place of "useLayoutEffect" but it might show title bit late so
-  better to use "useLayoutEffect"*/
+  /* 
+  we can also use: "useEffect" in place of "useLayoutEffect" but it might show title bit late so
+  better to use "useLayoutEffect"
+  */
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Contact Screen</Text>
