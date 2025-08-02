@@ -6,8 +6,8 @@
  in app.js
  */
 
-//? if currently this files name is App.js, then you are working with Stack navigation when you work with others make sure
-//? change its name to App_Stack.js
+//? if currently this file's name is App.js, then you are working with Stack navigation when you work with others make sure
+//? to change its name to App_Stack.js
 //! Rename its name back to App.js to make it work, when not working with it set its name to: App_Stack.js
 
 import * as React from "react";
@@ -42,11 +42,11 @@ export const AboutStack=()=>{
         initialRouteName="Home" //try "Contact" as initial route
         screenOptions={{
           headerStyle: { backgroundColor: "teal" },
-          headerTintColor: "white", //back icon
+          headerTintColor: "white", 
           headerTitleStyle: { fontWeight: "bold" },
           headerRight: () => (
             <Pressable onPress={() => alert("Menu Button Pressed")}>
-              <Text style={{ color: "skyblue", fontSize: 16}}>Menu</Text>
+              <Text style={{ color: "white", fontSize: 16}}>Menu</Text>
             </Pressable>
           ),
           contentStyle: {
