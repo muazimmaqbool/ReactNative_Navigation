@@ -3,19 +3,19 @@ import React from 'react'
 
 /*
 Lec-75:
-Passing Data between screens:
-lets see how to pass data while navigating
+Passing Data between screens.
+Lets see how to pass data while navigating:
 Example: let's pass name paramter from Home to About and render that name value in about screen
 ->The navigation.navigate("About") is used to go to About screen also accepts second parameter(a route paramter object)
   {this object contains data that you want to pass}
 
-  ->In Sending component: here Home.js
-  onPress={()=>navigation.navigate("About",{
-    name:"Muazim"
-  })}
+  ->In Sending component: here inside Home.js
+    onPress={()=>navigation.navigate("About",{
+      name:"Muazim"
+    })} 
 
   Accepting it in About screen
-  ->we access this paramter in any acreen by using "route" prop
+  ->we can access this paramter in any screen by using "route" prop
   ->then within the component destructure name from routes i.e const {name}=routes.params;
 
   Note: we can also set default paramters value in App.js
