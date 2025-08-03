@@ -3,7 +3,7 @@ import React from 'react'
 /*
 Drawer Navigation:
     -Unlike stack navigator which stacks screens one over the other
-    -The Drawer Navigator: introduces a hidden menu sliding from either side of the screen
+    -The Drawer Navigator introduces a hidden menu sliding from either side of the screen
     -It is particularly beneficial in apps with multiple main sections that require a neat and organized
      navigation structure.
 
