@@ -42,7 +42,7 @@ Note: by default header title position in ios is middle and in android it's left
             />
         headerLeft works in same way
 
-->Styling Content of the screens: using contentStyle Option
+->Styling Content of the screens: using contentStyle Option:
 example: <Stack.Screen
           name="Home"
           component={HomeScreen}
