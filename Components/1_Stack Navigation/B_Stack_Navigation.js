@@ -4,7 +4,7 @@ import React from 'react'
 /*
 Stack Navigation: Here each new screen is stacked on top of the previous one like a deck of cards.
   ->When you navigate to a new screen, a new screen is placed on top of the stack, and when you navigate back, 
-    the top screen is removed, revealing the previous screen.
+    when the top screen is removed, revealing the previous screen.
   ->Its particularly useful in scenarios where a linear flow of screens is required
     for example: List view to details view to more details view
     
@@ -20,12 +20,12 @@ Stack Navigation: Here each new screen is stacked on top of the previous one lik
     first intall "Native Stack Navigator" library: npm install @react-navigation/native-stack
     website: https://reactnavigation.org/docs/native-stack-navigator
 
-    after installation go to app.js and import necessary things their (watch at 2:38 from lect 73)
+    After installation go to app.js and import necessary things their (watch at 2:38 from lect 73)
 
 
     watch lec-74:
     Lets users navigate between two screen i.e HomeScreen and AboutScreen
-    their are two ways: 1)Navigation prop and 2)useNavigation hook
+    Their are two ways: 1)Navigation prop and 2)useNavigation hook
 
     1)Navigation prop: every component in your app is provided with Navigation prop automatically by react navigation
       lets use Navigate method of navigation prop to navigate between HomeScreen and AboutScreen
