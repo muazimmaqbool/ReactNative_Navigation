@@ -85,6 +85,7 @@ export const AboutStack=()=>{
           //   // passed from HomeScreen
           //   title: route.params.titleText,
           // })}
+          //here title is now being updated inside contact component via useLayoutEffect
           
         />
       </Stack.Navigator>

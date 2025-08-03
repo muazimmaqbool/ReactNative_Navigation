@@ -21,7 +21,7 @@ const HomeScreen = ({navigation,route}) => {
       <Text style={styles.text}>{route.params?.result}</Text>
       {/*used to explain dynamic stack navigation options */}
       <Button title='Go To Contact' onPress={()=>navigation.navigate("Contact",{
-       titleText:"Hp OMEN",
+       titleText:"New Title",
       })}/> 
     </View>
   )
