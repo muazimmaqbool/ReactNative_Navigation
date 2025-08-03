@@ -1,101 +1,56 @@
-/*
- To work with react navigation properly we need a wrapping component for the whole app
- i.e the navigation container component
- go back to docs:https://reactnavigation.org/docs/getting-started/
- and go to: Wrapping your app in NavigationContainer and copy the code below this heading and paste it here
- in app.js
- */
-
-//? if currently this file's name is App.js, then you are working with Stack navigation when you work with others make sure
-//? to change its name to App_Stack.js
-//! Rename its name back to App.js to make it work, when not working with it set its name to: App_Stack.js
-
-import * as React from "react";
+//! Rename its name back to App.js to make it work and when not working with this set its name to : App_Drawer.js
+import "react-native-gesture-handler"; //make sure it's at the top
 import { NavigationContainer } from "@react-navigation/native";
-//imported for using Navtive stack navigator
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./Components/Screens/1_For Stack Navigation/HomeScreen";
-import AboutScreen from "./Components/Screens/1_For Stack Navigation/AboutScreen";
-import { Pressable, Text } from "react-native";
-import Contact from "./Components/Screens/1_For Stack Navigation/Contact";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import DashBoardScreen from "./Components/Screens/2_For Drawer Nav/DashBoardScreen";
+import SettingsScreen from "./Components/Screens/2_For Drawer Nav/SettingsScreen";
+import Contact from "./Components/Screens/2_For Drawer Nav/Contact"
 
-//making native stack navigator instance
-const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
-
-/*
-?without using 'initiaRouteName'
- <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen}/> //! this will be the initial screen as its on top
-      <Stack.Screen name="About" component={AboutScreen}/>
-  </Stack.Navigator>
-
-?Using 'initialRouteName'
-<Stack.Navigator initialRouteName="About">
-      <Stack.Screen name="Home" component={HomeScreen}/>
-      <Stack.Screen name="About" component={AboutScreen}/> //? now this will be the initial screen as its mentioned in initialRouteName
-  </Stack.Navigator>
- */
-export const AboutStack=()=>{
-  return(
-    <Stack.Navigator
-        initialRouteName="Home" //try "Contact" as initial route
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator
         screenOptions={{
-          headerStyle: { backgroundColor: "teal" },
-          headerTintColor: "white", 
-          headerTitleStyle: { fontWeight: "bold" },
-          headerRight: () => (
-            <Pressable onPress={() => alert("Menu Button Pressed")}>
-              <Text style={{ color: "white", fontSize: 16}}>Menu</Text>
-            </Pressable>
-          ),
-          contentStyle: {
+          drawerActiveTintColor: "white", //color of text which is active
+          drawerActiveBackgroundColor: "teal", //background color of text which is active
+          drawerContentStyle: {
             backgroundColor: "skyblue",
           },
         }}
       >
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
+        <Drawer.Screen
+          name="Dashboard"
+          component={DashBoardScreen}
           options={{
-            title: "Welcome Home",
+            title: "My Dashboard",
+            drawerLabel: "Dashboard Label", //displayed on the drawer which comes from the side of the screen
+            //using below options here they will be applied only for Dashboard Screen
+            //     drawerActiveTintColor: "white",
+            //   drawerActiveBackgroundColor: "teal",
+            //   drawerContentStyle: {
+            //     backgroundColor: "skyblue",
+            //   },
           }}
         />
-        <Stack.Screen
-          name="About"
-          component={AboutScreen}
-          initialParams={{ name: "Guest" }}
+        <Drawer.Screen
+          name="Settings"
+          component={SettingsScreen}
           options={{
-            //here title is not mentioned it will take title as name value
-            headerTitleAlign: "center",
-            headerRight: () => (
-              <Pressable onPress={() => alert("Menu Button Pressed")}>
-                <Text style={{ color: "white", fontSize: 16}}>More Info</Text>
-              </Pressable>
-            ),
+            title:"My Settings", //here drawerLabel text is not mentioned so it will take the value title for drawerLabel as well
           }}
         />
-        {/*used to explain dynamic stack navigation options */}
-        <Stack.Screen
-          name="Contact"
-          component={Contact}
-          initialParams={{ name: "Guest" }}
-          //dynamic change of title using options 
-          // options={({ route }) => ({
-          //   // passed from HomeScreen
-          //   title: route.params.titleText,
-          // })}
-          //here title is now being updated inside contact component via useLayoutEffect
-          
+        <Drawer.Screen
+        name="Contact"
+        component={Contact}
+        //here i have not mentioned title and drawerLabel so it will take the value of name  for both
         />
-      </Stack.Navigator>
-  )
-}
-export default function App() {
-  return (
-    <NavigationContainer>
-      <AboutStack />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
-
+/*
+Now Drawer Menu Icon appears on the left side of the app to navigate to different components
+ Also its possible to toggle/open the drawer programatically see inside DashboardScreen component
+*/
