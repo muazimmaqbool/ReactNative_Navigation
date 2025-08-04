@@ -12,7 +12,7 @@ const DashBoardScreen = ({ navigation }) => {
       <Button title="Toggle Drawer" onPress={() => navigation.toggleDrawer()} />
       <Button
         title="Open Settings"
-        onPress={() => navigation.jumpTo("Settings")}
+        onPress={() => navigation.jumpTo("settings")}
       />
     </View>
   );

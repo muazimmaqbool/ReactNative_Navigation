@@ -21,7 +21,7 @@ export default function App() {
         }}
       >
         <Drawer.Screen
-          name="Dashboard"
+          name="dashboard"
           component={DashBoardScreen}
           options={{
             title: "My Dashboard",
@@ -35,7 +35,7 @@ export default function App() {
           }}
         />
         <Drawer.Screen
-          name="Settings"
+          name="settings"
           component={SettingsScreen}
           options={{
             title:"My Settings", //here if title is not mentioned then it will take title as value of name
