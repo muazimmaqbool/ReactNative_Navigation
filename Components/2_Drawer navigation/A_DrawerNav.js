@@ -12,16 +12,19 @@ Drawer Navigation:
     after installation you need to install the libraries that are required for the drawer navigator
     i.e: npx expo install react-native-gesture-handler react-native-reanimated
     and also add this line: plugins:["react-native-reanimated/plugin"], in babel.config.js file after presets
-        (visit: https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/)
-    ->Also make sure to clear cashe before running the app, lets add this -c in package.json to start the script
+                            like this:  return {
+                                          presets: ['babel-preset-expo'],
+                                          plugins:["react-native-reanimated/plugin"],
+                                        };
+    (visit: https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/)
+    ->Also make sure to clear cashe before running the app, let's add this -c in package.json to start the script
     Now see code in App_Drawer.js (rename its name to App.js before working with the drawer navigator)
 
 
     Important: 
     ->we can open the drawer programatically using a button (see inside DashBoardScreen.js) using toggleDrawer() on navigation
-      example: "navigation" as prop then - <Button title='Toggle drawer' onPress={()=>navigation.toggleDrawer()}/>
-    ->We can also use jumpTo method on navigation prop to navigate programatically without using drawer UI
-        example: 
+      example: "navigation" as prop then : <Button title='Toggle drawer' onPress={()=>navigation.toggleDrawer()}/>
+    ->We can also use jumpTo method on navigation prop to navigate programatically without using drawer UI 
 */
 const A_DrawerNav = () => {
   return (
