@@ -14,7 +14,7 @@ export default function App() {
       <Drawer.Navigator
         screenOptions={{
           drawerActiveTintColor: "white", //color of text which is active
-          drawerActiveBackgroundColor: "teal", //background color of text which is active
+          drawerActiveBackgroundColor: "blue", //background color of text which is active
           drawerContentStyle: {
             backgroundColor: "skyblue",
           },
@@ -38,13 +38,13 @@ export default function App() {
           name="Settings"
           component={SettingsScreen}
           options={{
-            title:"My Settings", //here drawerLabel text is not mentioned so it will take the value title for drawerLabel as well
+            title:"My Settings", //here if title is not mentioned then it will take title as value of name
           }}
         />
         <Drawer.Screen
         name="Contact"
         component={Contact}
-        //here i have not mentioned title and drawerLabel so it will take the value of name  for both
+        //here i have not mentioned title and drawerLabel so it will take the value of name for both
         />
       </Drawer.Navigator>
     </NavigationContainer>
