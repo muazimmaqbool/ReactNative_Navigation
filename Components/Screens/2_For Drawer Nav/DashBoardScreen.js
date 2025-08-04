@@ -9,9 +9,9 @@ const DashBoardScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>DashBoard Screen</Text>
-      <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} />
+      <Button title="Toggle Drawer" onPress={() => navigation.toggleDrawer()} />
       <Button
-        title="Go To Settings"
+        title="Open Settings"
         onPress={() => navigation.jumpTo("Settings")}
       />
     </View>
