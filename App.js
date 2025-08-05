@@ -34,7 +34,6 @@ export default function App() {
             tabBarIcon: (
               { color } //now icon color purple or gray i,e matchs the tab color
             ) => <Ionicons name="person" size={30} color={color} />,
-            //tabBarBadge:4, //used to text on top of tab icon, particularly useful for notifications or inbox tab that requires users attention
           }}
         />
         <Tab.Screen
