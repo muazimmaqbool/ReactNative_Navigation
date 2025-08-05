@@ -10,7 +10,7 @@ import Settings from "./Components/Screens/2_For Drawer Nav/SettingsScreen";
 import ChatScreen from "./Components/Screens/3_For Tab Nav/chatScreen";
 //using icons from expo icons
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { App_Stack } from "./App";
+import { AboutStack } from "./App_Stack";
 const Tab = createBottomTabNavigator();
 
 //we will nest stack navigator within the tab navigator
@@ -67,16 +67,16 @@ export default function App() {
           }}
         />
         {/* we will nest stack navigator within the tab navigator */}
-        {/* <Tab.Screen
+        <Tab.Screen
           name="About Stack"
-          component={App_Stack}
+          component={AboutStack}
           options={{
             tabBarIcon: ({ color }) => (
               <Ionicons color={color} name="cloudy" size={30} />
             ),
            headerShown:false, //now we will show one header instead of two, here tab navigators header will not be shown
           }}
-        /> */}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
