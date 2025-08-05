@@ -15,7 +15,7 @@ export default function App() {
       <Tab.Navigator
         screenOptions={{
           // tabBarLabelPosition:"beside-icon",// sets title on the right side of icon (used inside tablets)
-          tabBarLabelPosition: "below-icon", //used inside mobile devices
+          tabBarLabelPosition: "below-icon", //used inside mobile devices (default)
           tabBarShowLabel: true, //true by default , its false then tab label is hidden only icons are shown
           tabBarActiveTintColor: "purple", //color of active tab (on which currently you are) (by default its light blue)
           tabBarInactiveTintColor: "blue", // color of inactive tabs by default its "gray"
@@ -36,10 +36,11 @@ export default function App() {
           name="Chat"
           component={ChatScreen}
           options={{
-            tabBarBadge: 3,
+            tabBarBadge: 5,
             tabBarIcon: ({ color }) => (
               <Ionicons color={color} size={30} name="chatbubbles-outline" />
             ),
+            
           }}
         />
         <Tab.Screen

@@ -5,7 +5,6 @@ const SettingsScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Settings Screen</Text>
-      <Button title='Back To Dashboard' onPress={()=>navigation.jumpTo("dashboard")}/>
     </View>
   )
 }
