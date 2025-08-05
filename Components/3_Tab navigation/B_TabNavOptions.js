@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 /*
 Lec-81:
-Tab Navigation Options to customize it
+Tab Navigation Options are used to customize it
     see in App.js (App_Tab.js)
 
   Explore more about tab bar here:
